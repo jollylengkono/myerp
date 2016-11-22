@@ -1,6 +1,6 @@
 class DepartmentsController < ApplicationController
 
-  before_filter :authorize
+  #before_filter :authorize
 
   def index
     @departments = Department.all

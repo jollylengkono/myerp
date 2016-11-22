@@ -1,0 +1,22 @@
+<div class="row">
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Code</th>
+      <th>Adress</th>
+      <th>City</th>
+      <th>Phone</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @branches.each do |branch| %>
+    <tr>
+      <td><%= branch.branch_code %></td>
+      <td><%= branch.address %></td>
+      <td><%= branch.city %></td>
+      <td><%= branch.phone_number %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table
+</div>

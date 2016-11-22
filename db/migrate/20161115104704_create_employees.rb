@@ -16,8 +16,6 @@ class CreateEmployees < ActiveRecord::Migration[5.0]
     end
 
     create_table :employees do |t|
-      t.string  :user_name, limit: 20
-      t.string  :password, limit: 14
       t.string  :first_name, limit: 14
       t.string  :last_name, limit: 14
       t.string  :phone_number, limit: 20

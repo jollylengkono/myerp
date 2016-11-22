@@ -15,7 +15,8 @@ default: &default
   pool: 5
   username: kmtsbhutwavfuw
   password: mY9fA2OSsJYHBtN2Vdo-OSNdHN
-  socket: /tmp/mysql.sock
+  socket: /tmp/.s.PGSQL.5432
+  #socket: /tmp/mysql.sock
 
 development:
   <<: *default

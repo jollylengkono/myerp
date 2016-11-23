@@ -13,21 +13,22 @@ default: &default
   adapter: postgresql
   encoding: unicode
   pool: 5
-  username: kmtsbhutwavfuw
-  password: mY9fA2OSsJYHBtN2Vdo-OSNdHN
+  #username: kmtsbhutwavfuw
+  #password: mY9fA2OSsJYHBtN2Vdo-OSNdHN
   socket: /tmp/.s.PGSQL.5432
   #socket: /tmp/mysql.sock
 
 development:
   <<: *default
-  database: dge0a5gi0ardq
+  database: myerp
+  username: myerp
+  password: myerp
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: dge0a5gi0ardq
 
 # As with config/secrets.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is

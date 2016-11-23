@@ -1,6 +1,6 @@
 class EmployeesController < ApplicationController
   # Call authorization
-  #before_filter :authorize
+  before_filter :authorize
 
   def index
     @employees = Employee.all

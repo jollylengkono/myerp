@@ -1,6 +1,6 @@
 class BranchesController < ApplicationController
 
-  #before_filter :authorize
+  before_filter :authorize
 
   def index
     @branches = Branch.all

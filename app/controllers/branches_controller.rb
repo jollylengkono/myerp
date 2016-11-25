@@ -15,10 +15,10 @@ class BranchesController < ApplicationController
   def create
     branch = Branch.new(message_params)
     if branch.save
-      flash[:success] = "New branch: "+branch.branch_code+" saved"
+      flash[:success] = "New branch "+branch.branch_code+" saved"
       redirect_to branches_path
     else
-      render branches_new_path
+      render new_branch_path
     end
   end
 

@@ -17,9 +17,9 @@ class EmployeesController < ApplicationController
     @employee = Employee.new(message_params)
     if @employee.save
       flash[:success] = "New employee "+@employee.first_name+" "+@employee.last_name+" saved"
-      redirect_to list_employee_path
+      redirect_to employees_path
     else
-      render 'new'
+      render new_employee_path
     end
   end
 

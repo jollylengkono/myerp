@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  
+
   root                                  to: 'employees#index'
   get       '/login',                   to: 'sessions#new'
   post      '/login',                   to: 'sessions#create'
@@ -14,13 +14,13 @@ Rails.application.routes.draw do
   patch     'departments/update'
   get       'departments/destroy'
 
-  get       'branches',                 to: 'branches#index'
-  get       'branches/show'
-  get       'branches/new',             to: 'branches#new'
+  get       'branches',                 to: 'branches#index',       as: 'list_branch'
+  get       'branch/detail/:id',        to: 'branches#show',        as: 'show_branch'
+  get       'branch/new',               to: 'branches#new',         as: 'new_branch'
   post      'branches',                 to: 'branches#create'
-  get       'branches/edit'
-  get       'branches/update'
-  get       'branches/destroy'
+  get       'branch/edit/:id',          to: 'branches#edit',        as: 'edit_branch'
+  patch     'branch/update/:id',        to: 'branches#update'
+  get       'branch/destroy/:id',       to: 'branches#destroy',     as: 'delete_branch'
 
   get       'employees',                to: 'employees#index',      as: 'list_employee'
   get       'employee/detail/:id',      to: 'employees#show',       as: 'show_employee'

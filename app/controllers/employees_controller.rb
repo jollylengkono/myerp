@@ -24,12 +24,18 @@ class EmployeesController < ApplicationController
   end
 
   def edit
+    @employee = Employee.find(params[:id])
   end
 
   def update
   end
 
   def destroy
+    employee = Employee.find(params[:id])
+    if employee.destroy
+      flash[:success] = "Employee "+employee.first_name+" "+employee.last_name+" deleted"
+      redirect_to employees_path
+    end
   end
 
   private

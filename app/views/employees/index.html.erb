@@ -7,6 +7,7 @@
       <th>Phone</th>
       <th>Department</th>
       <th>Branch</th>
+      <th> </th>
     </tr>
   </thead>
   <tbody>
@@ -17,6 +18,11 @@
       <td><%= employee.phone_number %></td>
       <td><%= Department.find_by(id: employee.department_id).department_name %></td>
       <td><%= Branch.find_by(id: employee.branch_id).city %></td>
+      <td>
+        <%= link_to "Edit", edit_employee_path(employee) %>
+        <%= link_to "Delete", employee, method: :delete, data: {confirm: "Are you sure?"} %>
+      </td>
+
     </tr>
     <% end %>
   </tbody>

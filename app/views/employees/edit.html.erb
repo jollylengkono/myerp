@@ -1,2 +1,26 @@
-<h1>Employees#edit</h1>
-<p>Find me in app/views/employees/edit.html.erb</p>
+<h1>Edit</h1>
+<div class="row">
+  <div>
+    <%= form_for(@employee) do |f| %>
+      <%= render 'shared/error_messages' %>
+
+      <%= f.label :first_name %>
+      <%= f.text_field :first_name, class: 'form-control' %>
+      <%= f.label :last_name %>
+      <%= f.text_field :last_name, class: 'form-control' %>
+      <%= f.label :email %>
+      <%= f.text_field :email_address, class: 'form-control' %>
+      <%= f.label :password %>
+      <%= f.password_field :password, class: 'form-control' %>
+      <%= f.label :confirm_password %>
+      <%= f.password_field :password_confirmation, class: 'form-control' %>
+      <%= f.label :phone %>
+      <%= f.text_field :phone_number, class: 'form-control' %>
+      <%= f.label :department %>
+      <%= f.collection_select :department_id, Department.all, :id, :department_name, {prompt: true}, {class: "form-control"} %>
+      <%= f.label :branch %>
+      <%= f.collection_select :branch_id, Branch.all, :id, :city, {prompt: true}, {class: "form-control"} %>
+      <%= f.submit "Save", class: 'btn btn-primary' %>
+    <% end %>
+  </div>
+</div>

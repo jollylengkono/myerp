@@ -28,6 +28,13 @@ class EmployeesController < ApplicationController
   end
 
   def update
+    @employee = Employee.find(params[:id])
+    if @employee.update_attributes(message_params)
+      flash[:success] = "Employee "+@employee.first_name+" "+@employee.last_name+" updated"
+      redirect_to employees_path
+    else
+      render 'edit'
+    end
   end
 
   def destroy
